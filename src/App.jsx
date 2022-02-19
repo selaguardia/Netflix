@@ -1,7 +1,11 @@
+import "./app.scss"
+import Home from "./home/Home"
 
 const App = () => {
   return (
-    <div>Netflix Clone Project</div>
+    <>
+      <Home />
+    </>
   )
 }
 
