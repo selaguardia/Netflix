@@ -9,18 +9,25 @@ function Featured({type}) {
           <span>{type === 'movie' ? 'Movies' : "Series"}</span>
           <select name="genre" id="genre">
             <option>Genre</option>
-            <option value="action">Action</option>
+            <option value="adventure">Adventure</option>
             <option value="comedy">Comedy</option>
-            <option value="drama">Drama</option>
+            <option value="crime">Crime</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="historical">Historical</option>
             <option value="horror">Horror</option>
+            <option value="romance">Romance</option>
+            <option value="sci-fi">Sci-fi</option>
+            <option value="thriller">Thriller</option>
+            <option value="western">Western</option>
+            <option value="animation">Animation</option>
+            <option value="drama">Drama</option>
             <option value="documentary">Documentary</option>
-            <option></option>
           </select>
         </div>
       )}
-      <img src="https://storage.googleapis.com/stateless-campfire-pictures/2019/02/Netfli-You-Key-Art-Movie-Poster.jpg" alt="" />
+      <img src="https://m.media-amazon.com/images/I/917Aoui3gKL._SL1500_.jpg" alt="" />
       <div className="info">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Logonetflix.png/1600px-Logonetflix.png" alt="" />
+      <img src="https://www.pngall.com/wp-content/uploads/5/Money-Heist-Logo-PNG.png" alt="" />
         <span className="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elitsit amet consectetur adipisicing elit sit amet consectetur adipisicing elit. Earum, voluptatibus.</span>
         <div className="buttons">
           <button className="play">
