@@ -15,10 +15,20 @@ router.post("/register", async (req, res) => {
     // saves new user to db
     const user = await newUser.save();
     res.status(201).json(user);
-  } catch (error) {
-    res.status(500).json(error);
+  } catch (err) {
+    res.status(500).json(err);
   }
+});
 
+// Login
+router.post("/login", async (req, res) => {
+  try {
+    const user = User.findOne({ email: req.body.email });
+    !user && res.status(401).json("Wrong password or username!")
+    
+  } catch (err) {
+    res.status(500).json();
+  }
 });
 
 module.exports = router;
