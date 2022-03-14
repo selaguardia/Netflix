@@ -7,7 +7,7 @@ router.post("/register", async (req, res) => {
   const newUser = new User({
     username:req.body.username,
     email: req.body.email,
-    password: req.body.password, // this would show your password on MongoDB
+    // password: req.body.password, // this would show your password on MongoDB
     // Replace with npmjs.com cripto-js code
     password: CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString(), // Encrypt
   });
