@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
 
 const PORT = process.env.MONGO_URI || 5000;
 dotenv.config(); // Goes after const PORT
@@ -20,6 +21,7 @@ mongoose
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
 app.listen(PORT, () => {
   console.log(`✅ Listening for client requests on Port ${PORT} ✅`);
