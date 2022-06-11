@@ -6,8 +6,8 @@ import Watch from "./pages/watch/Watch";
 
 const App = () => {
   return (
-    // <Home />
-    <Watch />
+    <Home />
+    // <Watch />
     // <Register />
     // <Login />
   )
