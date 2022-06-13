@@ -47,9 +47,9 @@ router.post("/login", async (req, res) => {
     const { password, ...info } = user._doc;
 
     res.status(200).json({ ...info, accessToken });
-  } catch (err) {
-    res.status(500).json(err);
-    console.log("\x1b[31m%s\x1b[0m", "😥 ERROR MESSAGE: 😥\n", err);
+  } catch (error) {
+    res.status(500).json(error);
+    console.log("\x1b[31m%s\x1b[0m", "😥 ERROR MESSAGE: 😥\n", error);
   }
 });
 
