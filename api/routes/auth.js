@@ -27,16 +27,14 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    if (!user) {
-      return res.status(401).json("Sorry, that email is not registered.");
-    }
+    !user && res.status(401).json("Sorry, that email is not registered.");
+    
     // Decrypts password
     const bytes = CryptoJS.AES.decrypt(user.password, process.env.SECRET_KEY);
     const originalPassword = bytes.toString(CryptoJS.enc.Utf8);
 
-    if (originalPassword !== req.body.password) {
-      return res.status(401).json("Sorry, wrong password.");
-    }
+    originalPassword !== req.body.password && res.status(401).json("Sorry, wrong password.");
+    
     // Creates JWT token to hold user ID and isAdmin
     const accessToken = jwt.sign(
       { id: user._id, isAdmin: user.isAdmin },
@@ -48,8 +46,8 @@ router.post("/login", async (req, res) => {
 
     res.status(200).json({ ...info, accessToken });
   } catch (error) {
-    res.status(500).json(error);
     console.log("\x1b[31m%s\x1b[0m", "😥 ERROR MESSAGE: 😥\n", error);
+    res.status(500).json(error);
   }
 });
 
