@@ -1,6 +1,6 @@
-import './register.scss'
-import NetflixLogo from '../../assets/netflix-logo.png'
 import { useRef, useState } from 'react';
+import NetflixLogo from '../../assets/netflix-logo.png'
+import './register.scss'
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -37,14 +37,14 @@ const Register = () => {
           <div className="input">
             <input type="email" placeholder="Enter your email address" ref={emailRef} />
             <button className="registerButton" onClick={handleStart}>
-              Get Started
+              Sign Up
             </button>
           </div>
         ) : (
           <form className="input">
             <input type="password" placeholder="Enter your password" ref={passwordRef} />
             <button className="registerButton" onClick={handleFinish}>
-              Start
+              Start watching
             </button>
           </form>
         )}
