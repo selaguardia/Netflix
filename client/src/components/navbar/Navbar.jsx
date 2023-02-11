@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./navbar.scss";
+import { Routes, Route, Link } from "react-router-dom";
+
 import NetflixLogo from "../../assets/netflix-logo.png";
 import NetflixAvatar from "../../assets/netflix-avatar.png";
 import { ArrowDropDown, Notifications, Search } from "@mui/icons-material";
@@ -17,9 +19,11 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img src={NetflixLogo} alt="Netflix Logo" />
-          <span>Home</span>
-          <span>Series</span>
-          <span>Movies</span>
+         
+          <Link className="link" to="/"><span>Home</span></Link>
+          <Link className="link" to="/series"><span>Series</span></Link>
+          <Link className="link" to="/movies"><span>Movies</span></Link>
+
           <span>New & Popular</span>
           <span>MyList</span>
         </div>
